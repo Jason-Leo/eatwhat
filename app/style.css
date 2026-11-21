@@ -49,3 +49,19 @@ input::placeholder{color:#cecdbc}
 .dock .pill{gap:8px}
 @media(min-width:540px){body{padding:20px 0;background:#101f19}.screen{border-radius:28px;min-height:max(790px,calc(100dvh - 40px));max-width:390px}.dock{bottom:14px}}
 @media(max-width:360px){.content{padding-inline:16px}.dock{margin-inline:16px}.pill{padding-inline:9px}.filters{gap:5px}.food-art{right:-77px}}
+
+.launch-screen{display:none}
+@media (display-mode:standalone) and (prefers-reduced-motion:no-preference){
+ .launch-screen{display:grid;place-items:center;position:fixed;inset:0;z-index:10;pointer-events:none;background:radial-gradient(ellipse at 50% 42%,#59764d,#234534 50%,#172a22 85%);animation:launch-reveal 880ms both}
+ .launch-brand{display:grid;justify-items:center;gap:16px;color:var(--title);font:32px/1.25 var(--display);animation:launch-hop 670ms cubic-bezier(.2,.75,.35,1.12) both}
+ .launch-brand img{border-radius:28px;box-shadow:0 16px 38px #132b2399}
+}
+@keyframes launch-hop{
+ 0%{opacity:0;transform:translateY(22px) scale(.78,.73)}
+ 50%{opacity:1;transform:translateY(-7px) scale(1.045,1.025)}
+ 80%,100%{opacity:1;transform:translateY(0) scale(1)}
+}
+@keyframes launch-reveal{
+ 0%,68%{opacity:1;visibility:visible}
+ 100%{opacity:0;visibility:hidden}
+}
