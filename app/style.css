@@ -1,0 +1,51 @@
+:root{color-scheme:dark;--ink:#f0ebd9;--title:#fff0bd;--border:#ffffff30;--accent:linear-gradient(113deg,#f9de88,#f4b568);--display:"ZCOOL KuaiLe","Microsoft YaHei",sans-serif}
+*{box-sizing:border-box}
+html{background:#172a22}
+body{margin:0;color:var(--ink);font:14px/1.5 "Microsoft YaHei","PingFang SC",system-ui,sans-serif}
+button,input{font:inherit}
+button,a{touch-action:manipulation}
+button{cursor:pointer;color:inherit}
+button:disabled{opacity:.55;cursor:default}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid #ffe097;outline-offset:3px}
+.screen{max-width:430px;min-height:100dvh;margin:auto;position:relative;isolation:isolate;overflow:clip;background:linear-gradient(107deg,#172a22 0%,#234534 38.46%,#506443 76.92%);display:flex;flex-direction:column}
+.backdrop{position:absolute;inset:0;overflow:hidden;z-index:-1;pointer-events:none}
+.food-art{position:absolute;width:300px;height:169px;top:35px;right:-55px;object-fit:cover;mix-blend-mode:lighten;opacity:.98}
+.light-fade,.text-fade{position:absolute;left:0;top:0;width:100%;height:307px;background:linear-gradient(180deg,#192f25,transparent 33%,transparent 66%,#274634)}
+.text-fade{top:25px;width:min(300px,79%);height:215px;background:linear-gradient(90deg,#1b3328,#1b3328f0 33%,#1b332866 66%,transparent)}
+.glow{position:absolute;pointer-events:none}
+.gold{left:42%;top:189px;width:388px;height:401px}
+.green{right:50%;top:319px;width:432px;height:389px}
+.content{padding:26px 24px 24px;display:flex;align-items:stretch;flex:1;flex-direction:column;gap:8px;min-width:0}
+header{display:flex;flex-direction:column;gap:8px}
+header>span,.recommendation>span{font-size:13px;letter-spacing:.22px}
+h1,h2,h3,p{margin:0}
+h1,h2{font-family:var(--display);font-weight:400;color:var(--title);letter-spacing:.6px}
+h1{font-size:clamp(32px,10vw,40px);line-height:1.25}
+h2{font-size:29px;line-height:1.25}
+h3{font-size:19px;font-weight:600}
+.glass,.pill,.secondary{border:1px solid var(--border);background:#ffffff12;backdrop-filter:blur(12px)}
+.pill,.primary,.secondary{display:inline-flex;align-items:center;justify-content:center;gap:10px;white-space:nowrap}
+.pill{border-radius:999px;padding:8px 12px;font-size:13px;min-height:38px}
+.location{align-self:flex-start;max-width:100%;overflow:hidden;text-overflow:ellipsis}
+.filters{display:flex;align-items:center;gap:8px}
+.filters.wrap{flex-wrap:wrap}
+.glass{border-radius:20px}
+.recommendation{padding:17px 18px 18px;display:grid;gap:8px;background:#ffffff1c;backdrop-filter:blur(22px);border-color:#ffffff4d}
+.actions{display:flex;gap:10px;align-items:stretch}
+.actions>*{flex:1;min-width:0}
+.primary,.secondary{border-radius:13px;padding:11px 9px;min-height:49px}
+.primary{border:1px solid transparent;background:var(--accent);color:#253224;font-weight:600}
+.pill.primary{border-radius:999px;min-height:38px;padding:8px 12px;font-weight:500}
+.broad{width:100%;margin-block:4px}
+.place-row{width:100%;text-align:left;padding:10px 18px;display:flex;flex-direction:column;gap:3px}
+.place-row strong{font-size:19px;font-weight:600}
+.place-row span{font-size:14px}
+.note{padding:16px 17px;display:grid;gap:10px}
+.note>.pill{justify-self:start}
+input{width:100%;min-width:0;flex:2!important;border-radius:12px;border:1px solid var(--border);padding:10px;background:#162e24;color:var(--ink)}
+input::placeholder{color:#cecdbc}
+.dock{position:sticky;bottom:max(8px,env(safe-area-inset-bottom));margin:0 24px 15px;min-height:65px;display:flex;align-items:center;justify-content:space-between;padding:11px 13px;gap:5px;backdrop-filter:blur(24px);background:#ffffff17}
+.dock .pill{gap:8px}
+@media(min-width:540px){body{padding:20px 0;background:#101f19}.screen{border-radius:28px;min-height:max(790px,calc(100dvh - 40px));max-width:390px}.dock{bottom:14px}}
+@media(max-width:360px){.content{padding-inline:16px}.dock{margin-inline:16px}.pill{padding-inline:9px}.filters{gap:5px}.food-art{right:-77px}}
